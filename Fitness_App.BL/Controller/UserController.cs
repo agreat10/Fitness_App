@@ -12,7 +12,7 @@ namespace Fitness_App.BL.Controller
     /// </summary>
     public class UserController : ControllerBase
     {
-        private const string USER_FILE_NAME = "users.dat";
+        
 
         /// <summary>
         /// Список пользователей
@@ -60,7 +60,7 @@ namespace Fitness_App.BL.Controller
         /// <exception cref="FileLoadException"></exception>
         private List<User> GetUsersData()
         {
-           return Load<List<User>>(USER_FILE_NAME) ?? new List<User>();
+           return Load<User>() ?? new List<User>();
         }
         /// <summary>
         /// Создание нового User 
@@ -86,7 +86,7 @@ namespace Fitness_App.BL.Controller
         /// </summary>
         public  void Save()
         {
-            Save(USER_FILE_NAME, Users);                 
+            Save(Users);                 
         }
        
     }

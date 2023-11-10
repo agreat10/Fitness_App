@@ -13,10 +13,11 @@ namespace Fitness_App.BL.Model
     [Serializable]
     public class User
     {
+        public int Id { get; set; }
         /// <summary>
         /// Имя
         /// </summary>
-        public string Name { get;  }
+        public string Name { get; set; }
         /// <summary>
         /// Пол
         /// </summary>
@@ -37,6 +38,10 @@ namespace Fitness_App.BL.Model
         /// Количенство лет
         /// </summary>
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
+        public User()
+        {
+            
+        }
 
         /// <summary>
         /// Создание нового пользователя
